@@ -55,9 +55,9 @@ header::before {
   width: 100%;
   height: 100%;
   background: url('img/blood.png') center/cover no-repeat;
-  opacity: 0.2; /* 👈 Adjust transparency here */
+  opacity: 0.2;
   z-index: 1;
-  pointer-events: none; /* allows text clicking underneath */
+  pointer-events: none;
 }
 
 header h1 {
