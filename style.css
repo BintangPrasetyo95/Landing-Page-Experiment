@@ -23,6 +23,17 @@ html {
     font-style: normal;
 }
 
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 body {
     font-family: 'Karma', serif;
 }
