@@ -1,16 +1,30 @@
 html {
     background-color: black;
+    color: white;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 @font-face {
-  font-family: 'Bride Serif';
-  src: url('fonts/Rich 400.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Karma';
+    src: url('fonts/Karma-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rich 400';
+    src: url('fonts/Rich 400.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
-  font-family: 'Bride Serif', serif;
+    font-family: 'Karma', serif;
 }
 
 * {
@@ -20,87 +34,161 @@ body {
 }
 
 header {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  background-image:
-    linear-gradient(to bottom right,
-      rgba(120, 6, 6, 0.8) 0%,
-      rgba(120, 6, 6, 0.6) 40%,
-      rgba(0, 0, 0, 0.7) 100%
-    ),
-    url('img/ruby-default.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image:
+        linear-gradient(to bottom right,
+            rgba(120, 6, 6, 0.8) 0%,
+            rgba(120, 6, 6, 0.6) 40%,
+            rgba(0, 0, 0, 0.7) 100%),
+        url('img/ruby-default.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 0;
 
-  opacity: 0;
-  /* transform: translateY(20px);  */
-  animation: fadeUp 0.5s ease-out forwards;
-  animation-delay: 0.3s;
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.3s;
 }
 
 header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('img/blood.png') center/cover no-repeat;
-  opacity: 0.2;
-  z-index: 1;
-  pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/blood.png') center/cover no-repeat;
+    opacity: 0.2;
+    z-index: 1;
+    pointer-events: none;
 }
 
 @media (max-width: 768px) {
-  header {
-    background-position: 70% center;
-  }
+    header {
+        background-position: 70% center;
+    }
 }
 
 header h1 {
+    font-family: 'Rich 400', serif;
     font-size: 10rem;
     margin-bottom: 1rem;
+    font-style: italic;
 }
 
 p {
     font-size: 1.5rem;
-    max-width: 600px;
 }
 
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 4rem;
-  }
+    header h1 {
+        font-size: 4rem;
+    }
 
-  p {
-    font-size: 1rem;
-    padding: 0 1rem;
-  }
+    p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
 }
 
 @media (max-width: 480px) {
-  header h1 {
-    font-size: 2.8rem;
-  }
+    header h1 {
+        font-size: 2.8rem;
+    }
 
-  p {
-    font-size: 0.9rem;
-    max-width: 90%;
-  }
+    p {
+        font-size: 0.9rem;
+        max-width: 90%;
+    }
+}
+
+/* first row */
+.first-row {
+    margin-top: 20px;
+}
+
+.first-row {
+  display: flex;
+  align-items: center; /* ✅ Vertically center both columns */
+  height: 100vh;
+}
+
+.first-row .first-col {
+  flex: 0 0 30%;
+  display: flex;
+  align-items: center; /* center content vertically inside col */
+  justify-content: flex-end; /* push text to right */
+  padding: 2rem;
+}
+
+.first-row .first-col p {
+  text-align: justify;
+  direction: rtl; /* ✅ Makes justified text aligned right */
+  unicode-bidi: plaintext;
+  font-size: 40px;
+  max-width: 90%; /* Optional, keeps it readable */
+  margin-right: -10rem;
+  z-index: 9999;
+}
+
+.first-row .second-col {
+    flex: 0 0 70%;
+    padding: 1rem;
+}
+
+.first-row .second-col {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image:
+        linear-gradient(to right,
+            rgba(56, 37, 90, 0.8) 0%,
+            rgba(56, 37, 90, 0.6) 20%,
+            rgba(0, 125, 129, 0.0) 100%),
+        url('img/ruby-special.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.first-row .second-col::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 100%);
+    pointer-events: none;
+    z-index: 2;
+    mask-image: linear-gradient(to left,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 100%);
+    -webkit-mask-image: linear-gradient(to left,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 100%);
 }
