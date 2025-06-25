@@ -1,3 +1,12 @@
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loading');
+    loader.style.opacity = '0';
+    loader.style.transition = 'opacity 0.5s ease';
+    setTimeout(() => {
+        loader.style.display = 'none';
+    }, 500);
+});
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -5,7 +14,7 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.1 // triggers when 10% of element is visible
+    threshold: 0.1
 });
 
 document.querySelectorAll('.fade-up').forEach(el => {
