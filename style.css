@@ -126,24 +126,24 @@ p {
 
 .first-row {
   display: flex;
-  align-items: center; /* ✅ Vertically center both columns */
+  align-items: center;
   height: 100vh;
 }
 
 .first-row .first-col {
   flex: 0 0 30%;
   display: flex;
-  align-items: center; /* center content vertically inside col */
-  justify-content: flex-end; /* push text to right */
+  align-items: center;
+  justify-content: flex-end;
   padding: 2rem;
 }
 
 .first-row .first-col p {
   text-align: justify;
-  direction: rtl; /* ✅ Makes justified text aligned right */
+  direction: rtl;
   unicode-bidi: plaintext;
   font-size: 40px;
-  max-width: 90%; /* Optional, keeps it readable */
+  max-width: 90%;
   margin-right: -10rem;
   z-index: 9999;
 }
@@ -191,4 +191,62 @@ p {
     -webkit-mask-image: linear-gradient(to left,
         rgba(0, 0, 0, 0) 0%,
         rgba(0, 0, 0, 1) 100%);
+}
+
+.second-col .ruby-skin {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    font-family: 'Rich 400', serif;
+    z-index: 2;
+  }
+
+@media (max-width: 768px) {
+  .first-row {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .first-row .second-col {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/ruby-special.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+
+  .first-row .first-col {
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+  }
+
+  .first-row .first-col p {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.2em;
+    text-align: justify;
+    max-width: 90%;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    margin: 0;
+  }
 }
