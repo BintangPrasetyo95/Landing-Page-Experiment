@@ -17,6 +17,6 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.1
 });
 
-document.querySelectorAll('.fade-up').forEach(el => {
+document.querySelectorAll('.fade-first-row').forEach(el => {
     observer.observe(el);
 });

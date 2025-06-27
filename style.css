@@ -69,17 +69,6 @@ html {
     font-style: normal;
 }
 
-.fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-up.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 body {
     font-family: 'Karma', serif;
 }
@@ -113,7 +102,7 @@ header {
     z-index: 0;
 
     opacity: 0;
-    animation: fadeUp 1s ease-out forwards;
+    animation: fade 1s ease-out forwards;
     animation-delay: 0.3s;
 }
 
@@ -147,7 +136,8 @@ p {
     font-size: 1.5rem;
 }
 
-@keyframes fadeUp {
+/* For Header */
+@keyframes fade {
     to {
         opacity: 1;
         transform: translateY(0);
@@ -178,20 +168,30 @@ p {
 
 /* first row */
 .first-row {
+    overflow: hidden;
+    position: relative;
     margin-top: 20px;
-}
-
-.first-row {
     display: flex;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
+}
+
+.first-row .fade-first-row {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-first-row.show {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .first-row .first-col {
     flex: 0 0 30%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 2rem;
 }
 
@@ -201,8 +201,38 @@ p {
     unicode-bidi: plaintext;
     font-size: 40px;
     max-width: 90%;
-    margin-right: -10rem;
+    margin-right: -20rem;
     z-index: 9999;
+}
+
+@media (max-width: 2300px) {
+    .first-row .first-col p {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 1915px) {
+    .first-row .first-col p {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 1850px) {
+    .first-row .first-col p {
+        font-size: 33px;
+    }
+}
+
+@media (max-width: 1680px) {
+    .first-row .first-col p {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 1450px) {
+    .first-row .first-col p {
+        font-size: 27px;
+    }
 }
 
 .first-row .second-col {
@@ -223,11 +253,6 @@ p {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 1s ease-out forwards;
-    animation-delay: 0.3s;
 }
 
 .first-row .second-col::after {
@@ -261,15 +286,40 @@ p {
     z-index: 2;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .first-row {
         position: relative;
-        display: flex;
         flex-direction: column;
-        height: 100vh;
         justify-content: center;
         align-items: center;
+        height: 100vh;
         text-align: center;
+    }
+
+    .first-row .row {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+
+    .first-row .first-col {
+        flex: none;
+        width: 90%;
+        padding: 1.5rem;
+        border-radius: 10px;
+        z-index: 3;
+    }
+
+    .first-row .first-col p {
+        font-size: 1.2rem;
+        text-align: justify;
+        margin: 0;
     }
 
     .first-row .second-col {
@@ -278,37 +328,21 @@ p {
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('img/ruby-special.jpg');
+        z-index: 1;
+        background-image:
+            linear-gradient(to right,
+                rgba(56, 37, 90, 0.8) 0%,
+                rgba(56, 37, 90, 0.6) 20%,
+                rgba(0, 125, 129, 0.0) 100%),
+            url('img/ruby-special.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        z-index: 0;
-    }
-
-    .first-row .first-col {
-        position: relative;
-        z-index: 1;
-        padding: 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        height: 100vh;
-    }
-
-    .first-row .first-col p {
-        background-color: rgba(0, 0, 0, 0.4);
-        padding: 1rem 1.5rem;
-        border-radius: 0.5rem;
-        font-size: 1.2em;
-        text-align: justify;
-        max-width: 90%;
-        color: white;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        margin: 0;
     }
 }
 
-@media (max-width: 1200px) {
+
+@media (max-width: 1300px) {
     .first-row {
         position: relative;
         display: flex;
