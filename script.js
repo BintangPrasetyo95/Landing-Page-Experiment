@@ -20,3 +20,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-first-row').forEach(el => {
     observer.observe(el);
 });
+
+document.querySelectorAll('.fade-second-row').forEach(el => {
+    observer.observe(el);
+});

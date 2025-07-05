@@ -388,3 +388,233 @@ p {
         margin: 0;
     }
 }
+
+/* second row */
+.second-row {
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+.second-row .fade-second-row {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-second-row.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.second-row .first-col {
+    flex: 0 0 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.second-row .first-col p {
+    text-align: justify;
+    direction: rtl;
+    unicode-bidi: plaintext;
+    font-size: 40px;
+    max-width: 90%;
+    margin-left: -20rem;
+    z-index: 9999;
+}
+
+@media (max-width: 2300px) {
+    .second-row .first-col p {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 1915px) {
+    .second-row .first-col p {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 1850px) {
+    .second-row .first-col p {
+        font-size: 33px;
+    }
+}
+
+@media (max-width: 1680px) {
+    .second-row .first-col p {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 1450px) {
+    .second-row .first-col p {
+        font-size: 27px;
+    }
+}
+
+.second-row .second-col {
+    flex: 0 0 70%;
+    padding: 1rem;
+}
+
+.second-row .second-col {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image:
+        linear-gradient(to right,
+            rgba(56, 37, 90, 0.0) 100%,
+            rgba(56, 37, 90, 0.6) 20%,
+            rgba(0, 125, 129, 0.8) 0%),
+        url('img/ruby-ramadhan2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.second-row .second-col::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 100%);
+    pointer-events: none;
+    z-index: 2;
+    mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 100%);
+    -webkit-mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 100%);
+}
+
+.second-row .second-col .ruby-skin {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    font-family: 'Rich 400', serif;
+    z-index: 2;
+}
+
+@media (max-width: 850px) {
+    .second-row {
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .second-row .row {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+
+    .second-row .first-col {
+        flex: none;
+        width: 90%;
+        padding: 1.5rem;
+        border-radius: 10px;
+        z-index: 3;
+    }
+
+    .second-row .first-col p {
+        font-size: 1.2rem;
+        text-align: justify;
+        margin: 0;
+    }
+
+    .second-row .second-col {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-image:
+            linear-gradient(to right,
+                rgba(56, 37, 90, 0.8) 0%,
+                rgba(56, 37, 90, 0.6) 20%,
+                rgba(0, 125, 129, 0.0) 100%),
+            url('img/ruby-ramadhan2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+@media (max-width: 1300px) {
+    .second-row {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .second-row .second-col {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('img/ruby-ramadhan2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 0;
+    }
+
+    .second-row .first-col {
+        position: relative;
+        z-index: 1;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh;
+    }
+
+    .second-row .first-col p {
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+        font-size: 1.2em;
+        text-align: justify;
+        max-width: 90%;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        margin: 0;
+    }
+
+    .second-row .second-col .ruby-skin {
+        left: 1.5rem;
+        right: auto;
+        bottom: 1.5rem;
+        position: absolute;
+        z-index: 2;
+    }
+}
