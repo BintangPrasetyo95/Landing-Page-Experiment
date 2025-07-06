@@ -24,3 +24,7 @@ document.querySelectorAll('.fade-first-row').forEach(el => {
 document.querySelectorAll('.fade-second-row').forEach(el => {
     observer.observe(el);
 });
+
+document.querySelectorAll('.fade-third-row').forEach(el => {
+  observer.observe(el);
+});

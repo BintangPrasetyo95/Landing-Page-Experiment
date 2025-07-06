@@ -618,3 +618,97 @@ p {
         z-index: 2;
     }
 }
+
+/* Third Row */
+.third-row {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image:
+  linear-gradient(to right,
+    rgba(0, 0, 0, 1) 0%,        /* black at far left */
+    rgba(0, 0, 0, 0) 30%,         /* fade to transparent */
+    rgba(0, 0, 0, 0) 70%,         /* stay transparent through center */
+    rgba(0, 0, 0, 1) 100%),     /* black at far right */
+  url('img/ruby-luckybox.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centered Ruby Skin */
+.third-row .center-skin {
+    position: absolute;
+    font-size: 2.5rem;
+    color: white;
+    font-family: 'Rich 400', serif;
+    z-index: 3;
+}
+
+/* Corner Boxes */
+.corner-box {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.8rem;
+    border-radius: 0.6rem;
+    color: white;
+    font-family: 'Karma', serif;
+    font-size: 1rem;
+    z-index: 2;
+    max-width: 300px;
+}
+
+.corner-box img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* Corner Positioning */
+.top-left {
+    top: 1.5rem;
+    left: 1.5rem;
+}
+
+.top-right {
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+.bottom-left {
+    bottom: 1.5rem;
+    left: 1.5rem;
+}
+
+.bottom-right {
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .corner-box {
+        flex-direction: column;
+        text-align: center;
+        font-size: 0.8rem;
+        max-width: 120px;
+    }
+
+    .corner-box img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .third-row .center-skin {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
